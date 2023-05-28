@@ -40,6 +40,17 @@ services:
       - TZ=Europe/London
     volumes:
       - ./config_heimdall:/config
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./config_nextcloud:/config
+      - ./data_nextcloud:/data
+    restart: unless-stopped
   swag:
     container_name: swag
     image: lscr.io/linuxserver/swag:2.6.0
@@ -58,6 +69,7 @@ services:
       - heimdall
       - phpmyadmin
       - phppgadmin
+      - nextcloud
     volumes:
       - ./config_swag:/config
     ports:
@@ -65,8 +77,3 @@ services:
       - "443:443"
   tldraw:
     build: tldraw
-
-networks:
-  default:
-    external:
-      name: nginx-proxy
