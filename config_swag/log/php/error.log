@@ -252,3 +252,7 @@
 [28-May-2023 21:50:21] NOTICE: exiting, bye-bye!
 [28-May-2023 21:50:28] NOTICE: fpm is running, pid 399
 [28-May-2023 21:50:28] NOTICE: ready to handle connections
+[28-May-2023 21:52:15] NOTICE: Terminating ...
+[28-May-2023 21:52:15] NOTICE: exiting, bye-bye!
+[28-May-2023 21:52:24] NOTICE: fpm is running, pid 400
+[28-May-2023 21:52:24] NOTICE: ready to handle connections
