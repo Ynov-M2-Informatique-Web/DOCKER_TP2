@@ -418,3 +418,18 @@ phpLDAPadmin is the perfect LDAP browser for the LDAP professional and novice al
 #47 /app/www/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #48 {main}
 "} 
+[2023-05-28 20:54:34] local.DEBUG: Get app triggered for: b1909932aac1c5510c044de0cb8c0f3ef049a250  
+[2023-05-28 20:54:34] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => b1909932aac1c5510c044de0cb8c0f3ef049a250
+    [name] => WordPress
+    [website] => https://wordpress.org
+    [license] => GNU General Public License v2.0 only
+    [description] => WordPress is open source software you can use to create a beautiful website, blog, or app.
+    [enhanced] => 
+    [tile_background] => dark
+    [icon] => wordpress.svg
+    [sha] => 0ef26137a5179a972debc881a49dae7fd9c0f61d
+    [class] => \App\SupportedApps\WordPress\WordPress
+)
+  
