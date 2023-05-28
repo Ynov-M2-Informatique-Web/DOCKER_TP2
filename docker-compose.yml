@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   heimdall:
-    image: lscr.io/linuxserver/heimdall:latest
+    image: lscr.io/linuxserver/heimdall:2.5.6
     container_name: tp1_heimdall
     environment:
       - PUID=1000
@@ -11,7 +11,7 @@ services:
       - ./config_heimdall:/config
   swag:
     container_name: tp1_swag
-    image: lscr.io/linuxserver/swag:latest
+    image: lscr.io/linuxserver/swag:2.6.0
     cap_add:
       - NET_ADMIN
     environment:
