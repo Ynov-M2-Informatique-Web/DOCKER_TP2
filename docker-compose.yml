@@ -1,39 +1,5 @@
 version: "3.9"
 services:
-  postgres:
-    container_name: postgres
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: root
-  mariadb:
-    container_name: mariadb
-    image: mariadb:10.6
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-  mysql:
-    container_name: mysql
-    image: mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-  phpmyadmin:
-    container_name: phpmyadmin
-    image: phpmyadmin
-    restart: always
-    environment:
-      - PMA_HOSTS=mariadb,mysql
-  phppgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: colin@ynov.com
-      PGADMIN_DEFAULT_PASSWORD: root
   heimdall:
     image: lscr.io/linuxserver/heimdall:2.5.6
     container_name: heimdall
@@ -43,29 +9,6 @@ services:
       - TZ=Europe/London
     volumes:
       - ./config_heimdall:/config
-  nextcloud:
-    image: lscr.io/linuxserver/nextcloud:latest
-    container_name: nextcloud
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-    volumes:
-      - ./config_nextcloud:/config
-      - ./data_nextcloud:/data
-    restart: unless-stopped
-  openldap:
-    image: bitnami/openldap:2
-    ports:
-      - '1389:1389'
-      - '1636:1636'
-    environment:
-      - LDAP_ADMIN_USERNAME=admin
-      - LDAP_ADMIN_PASSWORD=adminpassword
-      - LDAP_USERS=user01,user02
-      - LDAP_PASSWORDS=password1,password2
-    volumes:
-      - './openldap_data:/bitnami/openldap'
   swag:
     container_name: swag
     image: lscr.io/linuxserver/swag:2.6.0
@@ -82,61 +25,51 @@ services:
       - DUCKDNSTOKEN=89f727a1-e2a8-43a2-b804-20b82d48071e
     depends_on:
       - heimdall
-      - phpmyadmin
-      - phppgadmin
-      - nextcloud
+      - sonarr
+      - radarr
+      - lidarr
+      - jackett
+      - bazarr
     volumes:
       - ./config_swag:/config
     ports:
       - "80:80"
       - "443:443"
-  tldraw:
-    build: tldraw
-  openldap:
-    image: osixia/openldap:1.5.0
-    container_name: openldap
-    tty: true
-    stdin_open: true
-    domainname: "example.org"
-    hostname: "ldap-server"
-  phpldapadmin:
-    image: osixia/phpldapadmin:latest
-    container_name: phpldapadmin
-    environment:
-      PHPLDAPADMIN_LDAP_HOSTS: "openldap"
-      PHPLDAPADMIN_HTTPS: "false"
-    depends_on:
-      - openldap
-  plik:
-    image: rootgg/plik:latest
-    container_name: plik
-    restart: "unless-stopped"
-  wordpress:
-    image: wordpress:latest
-    restart: always
-    environment:
-      - WORDPRESS_DB_HOST=mariadb
-      - WORDPRESS_DB_USER=wordpress
-      - WORDPRESS_DB_PASSWORD=wordpress
-      - WORDPRESS_DB_NAME=wordpress
-  medusa:
-    image: lscr.io/linuxserver/medusa:latest
-    container_name: medusa
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
+  sonarr:
+    image: linuxserver/sonarr
+    container_name: sonarr
+    volumes:
+      - ./sonarr/config:/config
+      - ./sonarr/downloads:/downloads
+  radarr:
+    image: linuxserver/radarr
+    container_name: radarr
+    volumes:
+      - ./radarr/config:/config
+      - ./radarr/downloads:/downloads
+  lidarr:
+    image: linuxserver/lidarr
+    container_name: lidarr
+    volumes:
+      - ./lidarr/config:/config
+      - ./lidarr/downloads:/downloads
+  jackett:
+    image: linuxserver/jackett
+    container_name: jackett
+    volumes:
+      - ./jackett/config:/config
+      - ./jackett/downloads:/downloads
+  bazarr:
+    image: linuxserver/bazarr
+    container_name: bazarr
+    volumes:
+      - ./bazarr/config:/config
+      - ./bazarr/downloads:/downloads
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    volumes:
+      - ./jellyfin/config:/config
+      - ./jellyfin/cache:/cache
+      - ./jellyfin/media:/media
     restart: unless-stopped
-  spacedeck:
-    image: spacedeck/spacedeck-open
-    container_name: spacedeck
-  gitea:
-    image: gitea/gitea:latest
-    container_name: gitea
-    environment:
-      - USER_UID=1000
-      - USER_GID=1000
-    restart: always
-  portainer:
-    image: portainer/portainer
-    restart: always

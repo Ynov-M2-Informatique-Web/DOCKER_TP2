@@ -272,3 +272,21 @@
 [28-May-2023 22:06:20] NOTICE: exiting, bye-bye!
 [28-May-2023 22:06:28] NOTICE: fpm is running, pid 410
 [28-May-2023 22:06:28] NOTICE: ready to handle connections
+[28-May-2023 22:32:42] NOTICE: fpm is running, pid 408
+[28-May-2023 22:32:42] NOTICE: ready to handle connections
+[28-May-2023 22:33:36] NOTICE: Terminating ...
+[28-May-2023 22:33:36] NOTICE: exiting, bye-bye!
+[28-May-2023 22:33:46] NOTICE: fpm is running, pid 405
+[28-May-2023 22:33:46] NOTICE: ready to handle connections
+[28-May-2023 22:34:30] NOTICE: Terminating ...
+[28-May-2023 22:34:30] NOTICE: exiting, bye-bye!
+[28-May-2023 22:34:39] NOTICE: fpm is running, pid 408
+[28-May-2023 22:34:39] NOTICE: ready to handle connections
+[28-May-2023 22:35:47] NOTICE: Terminating ...
+[28-May-2023 22:35:47] NOTICE: exiting, bye-bye!
+[28-May-2023 22:35:57] NOTICE: fpm is running, pid 410
+[28-May-2023 22:35:57] NOTICE: ready to handle connections
+[28-May-2023 22:37:58] NOTICE: Terminating ...
+[28-May-2023 22:37:58] NOTICE: exiting, bye-bye!
+[28-May-2023 22:38:17] NOTICE: fpm is running, pid 408
+[28-May-2023 22:38:17] NOTICE: ready to handle connections
