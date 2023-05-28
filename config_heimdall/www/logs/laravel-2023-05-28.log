@@ -514,3 +514,33 @@ phpLDAPadmin is the perfect LDAP browser for the LDAP professional and novice al
 #61 /app/www/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #62 {main}
 "} 
+[2023-05-28 21:06:40] local.DEBUG: Get app triggered for: 060b3b99f88e96085b4a68e095bc9e3d1d91e1bc  
+[2023-05-28 21:06:40] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => 060b3b99f88e96085b4a68e095bc9e3d1d91e1bc
+    [name] => Gitea
+    [website] => https://gitea.io
+    [license] => MIT License
+    [description] => Gitea is a community managed fork of Gogs, lightweight code hosting solution written in Go and published under the MIT license.
+    [enhanced] => 
+    [tile_background] => dark
+    [icon] => gitea.svg
+    [sha] => 9367839859b83454562a0dedf6eaea46947122ec
+    [class] => \App\SupportedApps\Gitea\Gitea
+)
+  
+[2023-05-28 21:06:54] local.DEBUG: Get app triggered for: 07b796b3a10eaa8b6f485ed2379187a39400b459  
+[2023-05-28 21:06:54] local.DEBUG: Download triggered for stdClass Object
+(
+    [appid] => 07b796b3a10eaa8b6f485ed2379187a39400b459
+    [name] => Portainer
+    [website] => https://portainer.io
+    [license] => zlib License
+    [description] => Portainer is a simple management solution for Docker. Easily manage your Docker hosts and Docker Swarm clusters via Portainer web user interface.
+    [enhanced] => 1
+    [tile_background] => dark
+    [icon] => portainer.svg
+    [sha] => 94a81b07f372894d0b6db212e2bb33681a1c839c
+    [class] => \App\SupportedApps\Portainer\Portainer
+)
+  

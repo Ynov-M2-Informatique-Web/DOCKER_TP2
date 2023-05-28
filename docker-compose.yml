@@ -137,3 +137,6 @@ services:
       - USER_UID=1000
       - USER_GID=1000
     restart: always
+  portainer:
+    image: portainer/portainer
+    restart: always
