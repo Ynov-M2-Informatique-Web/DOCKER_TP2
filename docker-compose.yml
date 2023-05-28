@@ -104,3 +104,7 @@ services:
       PHPLDAPADMIN_HTTPS: "false"
     depends_on:
       - openldap
+  plik:
+    image: rootgg/plik:latest
+    container_name: plik
+    restart: "unless-stopped"
