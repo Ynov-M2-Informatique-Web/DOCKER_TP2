@@ -130,3 +130,10 @@ services:
   spacedeck:
     image: spacedeck/spacedeck-open
     container_name: spacedeck
+  gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
