@@ -1,0 +1,3 @@
+[28-May-2023 19:13:09] NOTICE: fpm is running, pid 258
+[28-May-2023 19:13:09] NOTICE: ready to handle connections
+[28-May-2023 19:18:47] WARNING: [pool www] server reached pm.max_children setting (5), consider raising it
