@@ -127,3 +127,6 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     restart: unless-stopped
+  spacedeck:
+    image: spacedeck/spacedeck-open
+    container_name: spacedeck
